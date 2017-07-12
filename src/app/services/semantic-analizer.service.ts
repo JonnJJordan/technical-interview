@@ -3,10 +3,16 @@ import { Injectable, OnInit } from '@angular/core';
 @Injectable()
 export class SemanticAnalizerService {
 
+  // Servicio encargado de todas las operaciones semanticas que se necesiten.
+
+  // Declaracion de las propiedades del servicio
+
   private operations : string;
   private result : string;
   private valid_keys : RegExp;
   private valid_operators : RegExp;
+
+  // Inicializacion de las propiedades.
 
   constructor() { 
 
@@ -17,19 +23,31 @@ export class SemanticAnalizerService {
 
   }
 
+  // Metodo para obtener todas las operaciones que se estan llevando a cabo.
+
   getOperations = () : string => this.operations;
 
+  // Metodo para obtener el resultado parcial de la operacion.
+
   getResult = () : string => this.result;
+
+  // Metodo para eliminar el resultado parcial.
 
   deleteResult = () : void => {
     this.result = '';
   }
 
+  // Metodo para eliminar las operaciones.
+
   deleteOperations = () : void => {
     this.operations = '';
   }
 
+  // Numero de operaciones registradas.
+
   getOperationsCount = () : number => this.operations.match(new RegExp(this.valid_operators, 'g')).length;
+
+  // Metodo para agregar el operador, solo si aun no se ha seleccionado uno o si la ultima tecla seleccionada era un operador, lo sustituye.
 
   addKey = (key: string) : boolean => {
     let last_key = this.operations.slice(-1).match(this.valid_keys);
@@ -53,6 +71,8 @@ export class SemanticAnalizerService {
     return true;
   }
 
+  // Elimina la ultima tecla elegida (boton de borrar)
+
   deleteKey = () : void => {
 
     if (this.result.length > 1) {
@@ -61,6 +81,8 @@ export class SemanticAnalizerService {
     } else 
       this.result = '0';
   }
+
+  // Se valida si la tecla seleccionada es un numero.
 
   validateKey = (key: string) : boolean => {
 
@@ -72,16 +94,26 @@ export class SemanticAnalizerService {
     return false;
   }
 
+  // Se valida si la tecla seleccionada es un operador.
+
   validateOperators = (operator: string) : boolean => this.valid_operators.test(operator);
+
+  // Se limpian las propiedades de la clase.
 
   clear = () : void => {
     this.result = '';
     this.operations = '';
   }
 
+  // Se obtiene el ultimo operador que es el que se va a usar para la operacion.
+
   getLastOperator = () : string => this.operations.match(new RegExp(this.valid_operators, 'g')).slice(-1)[0];
 
+  // Se obtiene el ultimo numero que es con el que se va a hacer la operacion.
+
   getLastKey = () : string => this.operations.match(new RegExp(/[\d\.]+/, 'g')).slice(-1)[0]; 
+
+  // Metodo para transformar entidades HTML.
     
   encodeHtmlEntity = (str : any) : string => {
     let buf = [];
