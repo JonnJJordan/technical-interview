@@ -1,0 +1,97 @@
+<div class="calculator-container">
+  <div class="row margined">
+    <h1 class="text-center">JCalculator</h1>
+  </div>
+  <div class="row margined">
+    <div class="col-xs-12">
+      <input type="text" class="form-control" readonly [(ngModel)] = "operation">
+      <textarea class="form-control" readonly rows = "3" [(ngModel)] = "result"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-9">
+      <div class="row text-center margined">
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-danger btn-lg btn-block" (click) = "getKey($event)" id = "keyC">C</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-danger btn-lg btn-block" (click) = "getKey($event)" id = "keyBackspace"><i class="fa fa-long-arrow-left"></i></button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-danger btn-lg btn-block" (click) = "getKey($event)" id = "keyPotency">x<sup>e</sup></button>
+          </div>
+      </div>
+      <div class="row text-center margined">
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "getKey($event)" id = "key7">7</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "getKey($event)" id = "key8">8</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "getKey($event)" id = "key9">9</button>
+          </div>
+      </div>
+      <div class="row text-center margined">
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "getKey($event)" id = "key4">4</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "getKey($event)" id = "key5">5</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "getKey($event)" id = "key6">6</button>
+          </div>
+      </div>
+      <div class="row text-center margined">
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "getKey($event)" id = "key1">1</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "getKey($event)" id = "key2">2</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "getKey($event)" id = "key3">3</button>
+          </div>
+      </div>
+      <div class="row text-center margined">
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "getKey($event)" id = "key110">.</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "getKey($event)" id = "key0">0</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click) = "operate()" id = "keyEnter">=</button>
+          </div>
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <div class="row text-center margined">
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-danger btn-lg btn-block" (click) = "getKey($event)">&radic;</button>
+          </div>
+      </div>
+      <div class="row text-center margined">
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-danger btn-lg btn-block" (click) = "getKey($event)" id = "key111">/</button>
+          </div>
+      </div>
+      <div class="row text-center margined">
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-danger btn-lg btn-block" (click) = "getKey($event)" id = "key106">*</button>
+          </div>
+      </div>
+      <div class="row text-center margined">
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-danger btn-lg btn-block" (click) = "getKey($event)" id = "key109">-</button>
+          </div>
+      </div>
+      <div class="row text-center margined">
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-danger btn-lg btn-block" (click) = "getKey($event)" id = "key107">+</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
